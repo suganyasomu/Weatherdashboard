@@ -1,0 +1,74 @@
+body {
+  padding: 0;
+}
+
+.jumbotran {
+  /* border: 1px solid red; */
+  background-color: black;
+  height: 100px;
+  padding-top: 0%;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+}
+
+h2 {
+  padding-top: 0;
+}
+
+.input-group {
+  width: 70%;
+}
+
+.cityList {
+  margin: 0;
+}
+
+.container {
+
+  border: 1px solid blue;
+  width: 70%;
+}
+
+button {
+  background-color: lightgrey;
+
+}
+
+#btnList {
+  margin-top: 30px;
+  margin-right: 0;
+  width: 100%;
+  border: 1px solid red;
+}
+
+
+
+/* Control the left side */
+.left {
+  left: 0;
+  border: 1px solid purple;
+  width: 30%;
+
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  border: 1px solid aqua;
+  width: 70%;
+  float: right;
+  height: 200vh;
+
+}
+
+.split {
+  display: inline-block;
+}
+
+/* tr {
+  border: 1px solid lightgrey;
+} */
