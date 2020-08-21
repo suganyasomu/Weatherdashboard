@@ -2,16 +2,16 @@ body {
   padding: 0;
 }
 
-.jumbotran {
+.jumbotron {
   /* border: 1px solid red; */
   background-color: black;
   height: 100px;
   padding-top: 0%;
+  color: white;
 }
 
 h1 {
   text-align: center;
-  color: white;
   padding-top: 20px;
 }
 
@@ -20,7 +20,7 @@ h2 {
 }
 
 .input-group {
-  width: 50%;
+  width: 60%;
   margin-left: 20px;
 
 }
@@ -29,11 +29,7 @@ h2 {
   margin: 0;
 }
 
-.container {
 
-
-  width: 70%;
-}
 
 button {
   background-color: lightgrey;
@@ -52,28 +48,9 @@ button {
 
 
 /* Control the left side */
-.left {
-  left: 0;
-
-  width: 20%;
-
-}
-
-/* Control the right side */
-.right {
-  right: 0;
-  border: 1px solid lightgrey;
-  width: 70%;
-  float: right;
-  height: 30vh;
-  margin-top: 50px;
 
 
-}
 
-.split {
-  display: inline-block;
-}
 
 p {
   margin-left: 20px;
@@ -85,21 +62,22 @@ h3 {
 
 
 .row {
-  border: 1px solid red;
-  width: 70%;
-  float: right;
-  margin-top: 0px;
+  margin: 0px;
+  width: 100%;
 }
 
 
 
 .card {
-  width: 13rem;
   background-color: dodgerblue;
   height: 30vh;
 
 
 
+}
+
+.col-12 {
+  width: 100%;
 }
 
 /* tr {
