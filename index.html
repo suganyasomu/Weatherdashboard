@@ -26,23 +26,29 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3" id="applyColor">
           <h2>Search for a City:</h2>
 
-          <div class="input-group col-md-6">
+          <div class="input-group">
             <input class="form-control py-2" type="search" id="enterCity" />
             <span class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">
+              <button
+                class="btn btn-outline-secondary"
+                id="searchBtn"
+                type="button"
+              >
                 <i class="fa fa-search"></i>
               </button>
             </span>
+            <div id="btnList"></div>
           </div>
-          <div id="btnList"></div>
         </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 id="name">hello</h3>
+        <div class="col-md-9">
+          <div class="row" id="highlight">
+            <div class="col-md-12" id="mainBorder">
+              <h3 id="name" class="curWeather"></h3>
+              <!-- <span id="currentdate"></span> -->
+              <img class="curWeather" />
 
               <p>Temperature: <span id="temp"></span></p>
               <p>Humidity: <span id="humidity"></span></p>
@@ -60,6 +66,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js" type="text/javascript"></script>
   </body>
 </html>

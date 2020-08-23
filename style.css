@@ -23,6 +23,7 @@ h2 {
   width: 60%;
   margin-left: 20px;
 
+
 }
 
 .cityList {
@@ -40,17 +41,11 @@ button {
   margin-top: 30px;
   margin-right: 0;
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   margin-left: 10px;
   margin-bottom: 50px;
+
 }
-
-
-
-/* Control the left side */
-
-
-
 
 p {
   margin-left: 20px;
@@ -64,21 +59,64 @@ h3 {
 .row {
   margin: 0px;
   width: 100%;
+  border: 1px solid red;
+  position: fixed;
+}
+
+#mainBorder {
+  border: 1px solid lightgray;
+
+}
+
+.col-md-12 {
+  padding: 0;
+}
+
+.col-md-3 {
+  padding: 0;
+}
+
+.col-md-9 {
+  padding: 0;
+}
+
+
+
+.curWeather {
+  display: inline-block;
+}
+
+#highlight {
+  border: purple;
 }
 
 
 
 .card {
-  background-color: dodgerblue;
+  background-color: #007bff;
   height: 30vh;
+}
 
+.fa {
+  /* background-color: dodgerblue; */
+}
 
+#searchBtn {
+  background-color: #007bff;
+  color: white;
+}
 
+#applyColor {
+  background-color: #f8f9fa;
 }
 
 .col-12 {
   width: 100%;
 }
+
+
+
+#mainBorder {}
 
 /* tr {
   border: 1px solid lightgrey;
