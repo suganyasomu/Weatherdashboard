@@ -81,7 +81,7 @@ $(document).ready(function () {
 
       //get the values of UV index
       var queryURLUV =
-        "http://api.openweathermap.org/data/2.5/uvi?appid=c37004805d008ef699ea9eaa6df56fca&lat=" +
+        "https://api.openweathermap.org/data/2.5/uvi?appid=c37004805d008ef699ea9eaa6df56fca&lat=" +
         lat +
         "&lon=" +
         lon +
