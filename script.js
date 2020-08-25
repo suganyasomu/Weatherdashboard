@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+  //created variables
   var enterCity = $("#enterCity");
   var btn = $("button");
   var tbody = $("tbody");
@@ -12,12 +14,10 @@ $(document).ready(function () {
   var name = $("#name");
   var cardDetails = $("#cardDetails");
   var currentdate = $("#currentdate");
-  console.log(currentdate);
   var curWeatherIcon = $(".curWeatherIcon");
   var lat;
   var lon;
   var lastSearchVal;
-
   var getCity;
 
   //This function gets the value from the local storage and loads during the time of page load
@@ -35,7 +35,7 @@ $(document).ready(function () {
         createNewBtn
 
           .css("background-color", "white")
-          .css("width", "60%")
+          .css("width", "100%")
           .css("border", "1px solid lightgrey")
 
           .css("text-align", "left")
@@ -47,7 +47,7 @@ $(document).ready(function () {
     }
   }
 
-  //Get the values for Temperature, Humidity, WindSpeed from weather API call
+  //API call to get the values for Temperature, Humidity, WindSpeed from weather API call
   function getweather(val) {
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -58,7 +58,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
+
       //current date
       var currentDateVal = moment.unix(response.dt).format("MM/DD/YYYY");
 
@@ -70,16 +70,15 @@ $(document).ready(function () {
       img.attr("src", url);
       img.css("display", "inline-block");
 
+      //Display name , date and icon in same line
       name.text(response.name + " " + "(" + currentDateVal + ")");
-
       temperature.text(response.main.temp + " \xB0F");
-
       humidity.text(response.main.humidity + " %");
       windSpeed.text(response.wind.speed + " MPH");
       lat = response.coord.lat;
       lon = response.coord.lon;
 
-      //get the values of UV index
+      //API call to get the values of UV index
       var queryURLUV =
         "https://api.openweathermap.org/data/2.5/uvi?appid=c37004805d008ef699ea9eaa6df56fca&lat=" +
         lat +
@@ -110,7 +109,7 @@ $(document).ready(function () {
         }
       });
 
-      //Forecast API call
+      //Forecast API call to get the weather on daily basis
       var queryUrlForecast =
         "https://api.openweathermap.org/data/2.5/onecall?lat=" +
         lat +
@@ -122,10 +121,7 @@ $(document).ready(function () {
         url: queryUrlForecast,
         method: "GET",
       }).then(function (responseForecast) {
-        console.log(responseForecast);
-
         for (var i = 1; i < 6; i++) {
-          console.log("create card");
           var forecastDateVal = moment
             .unix(responseForecast.daily[i].dt)
             .format("MM/DD/YYYY");
@@ -161,10 +157,10 @@ $(document).ready(function () {
           if (i >= 2) {
             divCard.css("color", "white");
             divCard.css("margin-left", "40px");
-            divCard.css("width", "4%");
+            divCard.css("width", "10%");
           } else {
             divCard.css("color", "white");
-            divCard.css("width", "4%");
+            divCard.css("width", "10%");
           }
         }
       });
@@ -174,17 +170,12 @@ $(document).ready(function () {
   //Search for CityName and store it in local storage
   function getCityName() {
     getCity = enterCity.val();
-
     var myarr = getCity;
-    console.log(myarr);
     if (getCity != "") {
       cardDetails.empty();
       getweather(getCity);
-      var getStorageList = JSON.parse(localStorage.getItem("list"));
-      console.log(getStorageList);
-
+      var getStorageList = JSON.parse(localStorage.getItem("list"))
       var createBtn = $("<button>");
-
       createBtn.text(getCity);
       createBtn.addClass("citybtn");
 
@@ -194,14 +185,13 @@ $(document).ready(function () {
         createBtn.attr("id", "btn-" + getStorageList.length);
       }
       btnList.append(createBtn);
-      createBtn
-
-        .css("background-color", "white")
-        .css("width", "60%")
+      createBtn.css("background-color", "white")
+        .css("width", "100%")
         .css("border", "1px solid lightgrey")
 
         .css("text-align", "left")
-        .css("font", "100");
+        .css("font", "100")
+        .css("margin-left", "0");
 
       if (getStorageList != null) {
         getStorageList.push(getCity);
@@ -215,19 +205,20 @@ $(document).ready(function () {
     enterCity.val("");
   }
 
+  //This function is called when the user clicks on the history button to find the weather
   function historyButton(event) {
     var getID = event.target.id;
-    console.log(getID);
     var btnVal = $("#" + getID);
     var getVal = btnVal[0].textContent;
-    console.log(getVal);
     cardDetails.empty();
     getweather(getVal);
   }
 
+  //search button click
   $(btn).on("click", getCityName);
 
+  //history button click
   $(document).on("click", ".citybtn", historyButton);
-
+  //during the initial page load
   load();
 });
