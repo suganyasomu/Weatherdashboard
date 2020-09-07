@@ -2,10 +2,10 @@
 
 Project name is a `weather dashboard` that allows `users` to do `search to get current day and Forecast weather for any city/state`.
 
-Search Listing Screen:
+1.Search Listing Screen:
 ![Product Name Screen Shot][product-screenshot]
 
-Seached City/State name should be saved as history:
+2.Seached City/State name should be saved as history:
 ![Product Name Screen Shot][product-screenshot2]
 
 ## Process
